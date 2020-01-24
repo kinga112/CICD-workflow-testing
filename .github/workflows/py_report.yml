@@ -43,7 +43,7 @@ jobs:
       uses: actions/checkout@v1
       with:
         fetch-depth: 1
-      - uses: rips/github-action-scan@v1
+      uses: rips/github-action-scan@v1
       env:
         RIPS_BASE_URI: "https://api-3.ripstech.com"
         RIPS_EMAIL: ${{ secrets.RIPS_EMAIL }}
