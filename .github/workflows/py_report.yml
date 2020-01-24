@@ -1,4 +1,4 @@
-name: Python package
+name: Pre-Commit Report
 
 on: [push]
 
@@ -11,6 +11,11 @@ jobs:
         python-version: [3.6, 3.7]
 
     steps:
+    - name: Anchore Scan
+      uses: anchore/scan-action@v1.0.0
+      with:
+        image-reference: "localbuild/testimage:latest"
+        fail-build: true
     - uses: actions/checkout@v2
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
