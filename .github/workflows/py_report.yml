@@ -51,5 +51,6 @@ jobs:
       run: |
         pip install detect-secrets-server
         sudo apt-get install git-all
+        sudo apt-get update
         detect-secrets-server add git@github.com:yelp/detect-secrets
         detect-secrets-server scan kinga112/CICD-workflow-testing
