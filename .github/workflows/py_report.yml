@@ -49,7 +49,7 @@ jobs:
 
     - name: Another Secret Scan
       run: |
-        sudo apt-get update –fix-missing -y
+        sudo apt-get update –fix-missing
         sudo apt-get install git-all -y
         pip install detect-secrets-server
         detect-secrets-server add git@github.com:yelp/detect-secrets
