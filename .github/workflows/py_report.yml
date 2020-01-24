@@ -1,4 +1,4 @@
-name: Python package
+name: Pre-Commit Report
 
 on: [push]
 
@@ -24,12 +24,21 @@ jobs:
       run: |
         pip install flake8
         # stop the build if there are Python syntax errors or undefined names
-        flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
+        # flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
-        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=127 --statistics
+        flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
+    #- name: Lint with pylint
+    #  uses: fylein/python-pylint-github-action@v4
+    #  with:
+    #    args: pip3 install -r requirements.txt && pylint --rcfile=.pylintrc kinga112/CICD-workflow-testing
     
-    # Add when custom tests are created
+    # Create custom tests to avoid fail!
     #- name: Test with pytest
     #  run: |
     #    pip install pytest
     #    pytest
+
+    # Anchore security scan
+    #- name: Anchore security scan
+    #  uses: anchore/scan-action@v1.0.0
+    #  with:
