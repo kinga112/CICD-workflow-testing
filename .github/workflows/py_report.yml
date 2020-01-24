@@ -42,3 +42,5 @@ jobs:
     #- name: Anchore security scan
     #  uses: anchore/scan-action@v1.0.0
     #  with:
+    - name: Trufflehog Actions Scan
+      uses: edplato/trufflehog-actions-scan@v0.9f-beta
