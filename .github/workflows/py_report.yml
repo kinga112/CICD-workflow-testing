@@ -12,14 +12,17 @@ jobs:
 
     steps:
     - uses: actions/checkout@v2
+    
     - name: Set up Python ${{ matrix.python-version }}
       uses: actions/setup-python@v1
       with:
         python-version: ${{ matrix.python-version }}
+    
     - name: Install dependencies
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
+    
     - name: Lint with flake8
       run: |
         pip install flake8
@@ -27,10 +30,11 @@ jobs:
         # flake8 . --count --select=E9,F63,F7,F82 --show-source --statistics
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
-    #- name: Lint with pylint
-    #  uses: fylein/python-pylint-github-action@v4
-    #  with:
-    #    args: pip3 install -r requirements.txt && pylint --rcfile=.pylintrc kinga112/CICD-workflow-testing
+    
+    - name: Lint with pylint
+      run: |
+        pip install pylint
+        pylint
     
     # Create custom tests to avoid fail!
     #- name: Test with pytest
@@ -47,11 +51,11 @@ jobs:
     - name: Secret Scan
       uses: max/secret-scan@1.0.0
 
-    - name: Another Secret Scan
-      run: |
-        sudo apt --fix-missing update
-        sudo apt install -f
-        sudo apt-get install git-all -y
-        pip install detect-secrets-server
-        detect-secrets-server add git@github.com:yelp/detect-secrets
-        detect-secrets-server scan kinga112/CICD-workflow-testing
+    #- name: Another Secret Scan
+    #  run: |
+    #    sudo apt --fix-missing update
+    #    sudo apt install -f
+    #    sudo apt-get install git-all -y
+    #    pip install detect-secrets-server
+    #    detect-secrets-server add git@github.com:yelp/detect-secrets
+    #    detect-secrets-server scan kinga112/CICD-workflow-testing
