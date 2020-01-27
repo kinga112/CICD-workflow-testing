@@ -34,7 +34,7 @@ jobs:
     - name: Lint with pylint
       run: |
         pip install pylint
-        pylint . --exit-zero --max-complexity=10
+        pylint /*.py --exit-zero
     
     # Create custom tests to avoid fail!
     #- name: Test with pytest
