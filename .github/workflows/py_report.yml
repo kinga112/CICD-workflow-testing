@@ -34,7 +34,7 @@ jobs:
     - name: Lint with pylint
       run: |
         pip install pylint
-        pylint /*.py --exit-zero
+        args = "pip install -r requirements.txt ; pylint **/*.py --exit-zero"
     
     # Create custom tests to avoid fail!
     #- name: Test with pytest
