@@ -44,13 +44,5 @@ jobs:
     - name: Trufflehog Secret Scan
       run: |
         pip install trufflehog
+        # stop the build if there are Python syntax errors or undefined names
         trufflehog .
-
-    #- name: Another Secret Scan
-    #  run: |
-    #    sudo apt --fix-missing update
-    #    sudo apt install -f
-    #    sudo apt-get install git-all -y
-    #    pip install detect-secrets-server
-    #    detect-secrets-server add git@github.com:yelp/detect-secrets
-    #    detect-secrets-server scan kinga112/CICD-workflow-testing
