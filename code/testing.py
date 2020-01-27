@@ -2,8 +2,12 @@ print("Hello World")
 
 print("Test 2")
 
-print("Test 3")
-
 def add(x, y):
+    """
+    adds x and y
+    """
     num = x + y
     return num
+
+
+print(add('a', 'b'))
