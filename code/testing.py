@@ -1,6 +1,6 @@
 print("Hello World")
 
-print("Test 2")
+print("Test 1")
 
 def add(x, y):
     """

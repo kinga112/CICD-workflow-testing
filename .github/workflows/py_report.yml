@@ -41,11 +41,11 @@ jobs:
     - name: Secret Scan
       uses: max/secret-scan@1.0.0
 
-    - name: Trufflehog scan
+    - name: Trufflehog Secret Scan
       run: |
         pip install trufflehog
         trufflehog .
-        
+
     #- name: Another Secret Scan
     #  run: |
     #    sudo apt --fix-missing update
