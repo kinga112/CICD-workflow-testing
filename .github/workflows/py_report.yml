@@ -31,26 +31,21 @@ jobs:
         # exit-zero treats all errors as warnings. The GitHub editor is 127 chars wide
         flake8 . --count --exit-zero --max-complexity=10 --max-line-length=120 --statistics
     
-    - name: Lint with pylint
-      run: |
-        pip install pylint
-        pylint . --exit-zero
-    
     # Create custom tests to avoid fail!
     #- name: Test with pytest
     #  run: |
     #    pip install pytest
     #    pytest
 
-    # Anchore security scan
-    #- name: Anchore security scan
-    #  uses: anchore/scan-action@v1.0.0
-    #  with:
-    #- name: Trufflehog Actions Scan
-    #  uses: edplato/trufflehog-actions-scan@v0.9f-beta
+    # Looks for reveals secrets
     - name: Secret Scan
       uses: max/secret-scan@1.0.0
 
+    - name: Trufflehog scan
+      run: |
+        pip install trufflehog
+        trufflehog .
+        
     #- name: Another Secret Scan
     #  run: |
     #    sudo apt --fix-missing update
