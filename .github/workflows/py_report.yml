@@ -41,8 +41,11 @@ jobs:
     - name: Secret Scan
       uses: max/secret-scan@1.0.0
 
-    - name: Trufflehog Secret Scan
-      run: |
-        pip install trufflehog
+    #- name: Trufflehog Secret Scan
+    #  run: |
+    #    pip install trufflehog
         # stop the build if there are Python syntax errors or undefined names
-        trufflehog . --json
+    #    trufflehog . --json
+
+    - name: Trufflehog Scan
+      uses: edplato/trufflehog-actions-scan@master
