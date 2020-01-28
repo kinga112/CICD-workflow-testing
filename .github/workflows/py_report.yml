@@ -46,7 +46,6 @@ jobs:
         pip install trufflehog
         trufflehog /home/runner/work/CICD-workflow-testing/CICD-workflow-testing
         trufflehog --help
-        trufflehog
         trufflehog .
 
     #- name: Trufflehog Scan
