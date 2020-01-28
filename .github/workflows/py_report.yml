@@ -46,7 +46,7 @@ jobs:
         pip install trufflehog
         cd ..
         trufflehog --help
-        trufflehog CICD-workflow-testing --json
+        sudo trufflehog CICD-workflow-testing --json
 
     #- name: Trufflehog Scan
     #  uses: edplato/trufflehog-actions-scan@master
