@@ -45,6 +45,8 @@ jobs:
       run: |
         pip install trufflehog
         trufflehog .
+        pip install foresthog
+        foresthog . --regex --entropy
 
     #- name: Trufflehog Scan
     #  uses: edplato/trufflehog-actions-scan@master
