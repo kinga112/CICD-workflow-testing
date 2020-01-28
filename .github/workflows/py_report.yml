@@ -44,9 +44,7 @@ jobs:
     - name: Trufflehog Secret Scan
       run: |
         pip install trufflehog
-        cd ..
-        trufflehog --help
-        sudo trufflehog CICD-workflow-testing --json
+        trufflehog . --branch dev
 
     #- name: Trufflehog Scan
     #  uses: edplato/trufflehog-actions-scan@master
