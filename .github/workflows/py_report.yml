@@ -43,6 +43,7 @@ jobs:
 
     - name: Trufflehog Secret Scan
       run: |
+        cd ..
         ls
     #    pip install trufflehog
     #    trufflehog /home/runner/work/CICD-workflow-testing/CICD-workflow-testing
