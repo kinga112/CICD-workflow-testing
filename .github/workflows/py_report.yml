@@ -44,7 +44,7 @@ jobs:
     - name: Trufflehog Secret Scan
       run: |
         pip install trufflehog
-        trufflehog . --branch dev
+        trufflehog .
 
     #- name: Trufflehog Scan
     #  uses: edplato/trufflehog-actions-scan@master
