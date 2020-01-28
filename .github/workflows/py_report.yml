@@ -41,11 +41,10 @@ jobs:
     - name: Secret Scan
       uses: max/secret-scan@1.0.0
 
-    #- name: Trufflehog Secret Scan
-    #  run: |
-    #    pip install trufflehog
-        # stop the build if there are Python syntax errors or undefined names
-    #    trufflehog . --json
+    - name: Trufflehog Secret Scan
+      run: |
+        pip install trufflehog
+        trufflehog /home/runner/work/CICD-workflow-testing/CICD-workflow-testing
 
-    - name: Trufflehog Scan
-      uses: edplato/trufflehog-actions-scan@master
+    #- name: Trufflehog Scan
+    #  uses: edplato/trufflehog-actions-scan@master
