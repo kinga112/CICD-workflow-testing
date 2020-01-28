@@ -47,6 +47,7 @@ jobs:
         trufflehog /home/runner/work/CICD-workflow-testing/CICD-workflow-testing
         trufflehog --help
         trufflehog
+        trufflehog .
 
     #- name: Trufflehog Scan
     #  uses: edplato/trufflehog-actions-scan@master
